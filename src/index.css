@@ -1,0 +1,34 @@
+.video {
+  position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+}
+
+.poster {
+  height: 370px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  align-items: flex-end;
+}
+
+.content {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.other {
+  position: absolute;
+  margin-top: 150px;
+}
+
+.camera {
+  position: absolute;
+  margin-top: 245px;
+}
