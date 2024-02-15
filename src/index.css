@@ -42,6 +42,11 @@
 }
 
 @media only screen and (max-width: 524px) {
+
+  .poster{
+    height: 320px;
+  }
+
   .other{
     width: 300px;
   }
