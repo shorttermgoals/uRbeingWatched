@@ -1,3 +1,9 @@
+* {
+  cursor: crosshair;
+}
+
+
+
 .video {
   position: fixed;
     right: 0;
@@ -7,9 +13,11 @@
     width: auto;
     height: auto;
     z-index: -1; 
+    
 }
 
 .poster {
+  margin: 0;
   height: 370px;
   display: grid;
   place-items: center;
@@ -31,4 +39,15 @@
 .camera {
   position: absolute;
   margin-top: 245px;
+}
+
+@media only screen and (max-width: 524px) {
+  .other{
+    width: 300px;
+  }
+
+  .camera{
+    width: 130px;
+    margin-top: 210px;
+  }
 }
