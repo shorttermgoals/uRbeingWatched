@@ -18,11 +18,11 @@
 
 .poster {
   margin: 0;
-  height: 370px;
+  height: 95vh;
   display: grid;
   place-items: center;
   position: relative;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .content {
@@ -33,19 +33,16 @@
 
 .other {
   position: absolute;
-  margin-top: 150px;
 }
 
 .camera {
   position: absolute;
-  margin-top: 245px;
+  margin-top: 8vh;
 }
 
 @media only screen and (max-width: 524px) {
 
-  .poster{
-    height: 280px;
-  }
+  
 
   .other{
     width: 300px;
@@ -53,6 +50,6 @@
 
   .camera{
     width: 130px;
-    margin-top: 210px;
+    margin-top: 7vh;
   }
 }
