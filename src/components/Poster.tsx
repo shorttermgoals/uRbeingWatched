@@ -46,7 +46,7 @@ return (
             <img
               className='camera'
               style={{
-                transform: `rotate(${rotation-30}deg)`
+                transform: `rotate(${rotation}deg)`
               }}
               src='images/Camera.png'
             />

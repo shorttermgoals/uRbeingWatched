@@ -37,7 +37,7 @@
 
 .camera {
   position: absolute;
-  margin-top: 8vh;
+  margin-top: 90px;
 }
 
 @media only screen and (max-width: 524px) {
@@ -50,6 +50,8 @@
 
   .camera{
     width: 130px;
-    margin-top: 7vh;
+    margin-top: 60px;
   }
 }
+
+@media only screen and (max-height:)
