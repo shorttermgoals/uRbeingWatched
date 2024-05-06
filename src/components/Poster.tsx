@@ -6,11 +6,11 @@ function Poster() {
 
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [rotation, setRotation] = useState(0);
-
+    const [cameraMarginTop, setCameraMarginTop] = useState(32);
 
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {
-        setCursorPosition({ x: event.clientX, y: event.clientY });
+        setCursorPosition({ x: event.clientX, y: event.clientY - cameraMarginTop});
         };
 
         window.addEventListener("mousemove", handleMouseMove);
@@ -18,7 +18,7 @@ function Poster() {
         return () => {
         window.removeEventListener("mousemove", handleMouseMove);
         };
-    }, []);
+    }, [cameraMarginTop]);
 
     useEffect(() => {
         const calculateRotation = () => {
@@ -32,6 +32,36 @@ function Poster() {
 
         calculateRotation();
     }, [cursorPosition]);
+
+    useEffect(() => {
+      // Comprobar el ancho del viewport y establecer cameraMarginTop en consecuencia
+      const handleViewportResize = () => {
+          const viewportWidth = window.innerWidth;
+          if (viewportWidth >= 524) {
+              setCameraMarginTop(32);
+              
+          } else {
+              // Otro valor para cameraMarginTop cuando el viewport es menor de 600px
+              setCameraMarginTop(15);
+           
+          }
+      };
+
+      // Llamar a la función al inicio para establecer el valor inicial
+      handleViewportResize();
+
+      // Escuchar eventos de cambio de tamaño de la ventana para ajustar el valor de cameraMarginTop
+      window.addEventListener("resize", handleViewportResize);
+
+      // Limpiar el listener cuando el componente se desmonta
+      return () => {
+          window.removeEventListener("resize", handleViewportResize);
+      };
+  }, []);
+
+  useEffect(() => {
+    console.log(cameraMarginTop); // Loguear el valor actualizado de cameraMarginTop
+  }, [cameraMarginTop]);
 
 
 return (
